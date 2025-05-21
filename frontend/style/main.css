@@ -1,0 +1,39 @@
+body {
+    background-color: rgb(231, 230, 226);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: rgb(70, 64, 64);
+}
+
+h1 {
+    color: rgb(21, 184, 129); 
+    text-align: center;
+    text-decoration: strong;
+    font-size: large;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+/* entryOptions {
+    color: seagreen;
+} */
+
+header {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+header button {
+    background-color: rgb(102, 189, 216);
+    margin-right: 200px;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    font-size: medium;
+    padding: 10px;
+    size: 100px;
+    border: none;
+    background-origin: padding-box;
+}
