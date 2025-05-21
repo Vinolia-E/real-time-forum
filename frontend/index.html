@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- <html lang="en"> -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>real time forum</title>
+</head>
+
+<body>
+
+    <h1 style="font-size: larger;">REAL TIME FORUM</h1>
+
+    <p>Welcome to Real_time__forum! Where you connect, interact, post and have fun with others</p>
+
+    <header>
+        <!-- <div class="btn"></div> -->
+        <div id="entryOptions" name="entryOptions">
+            <button id="showLoginBtn" type="button">Sign-In</button>
+            <button id="showRegisterBtn" type="button">Sign-Up</button>
+            <button id="logoutbtn" type="button">Log out</button>
+        </div>
+    </header>
+
+    <div id="registerSection" style="display: none;">
+        <!-- <button type="button">Sign-Up</button> -->
+        <form id="registerForm">
+            <label for="nickname">Nickname:</label><br>
+            <input type="text" id="nickname" name="nickname"><br>
+            <label for="age">Age:</label><br>
+            <input type="text" id="age" name="age"><br>
+            <label for="gender">Gender:</label><br>
+            <input type="radio" id="gender" name="gender"> Female<br>
+            <input type="radio" id="gender" name="gender"> Male<br>
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname"><br>
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email"><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="reg_password" name="password"><br>
+            <label for="cpassword">Confirm Password:</label><br>
+            <input type="password" id="reg_password" name="cpassword"><br>
+            <button type="submit">Register</button>
+            <button type="button" id="backFromRegister">Back</button>
+        </form>
+        <!-- <p>By clicking submit, you agree to our <a href="#">terms and conditions</a></p> -->
+    </div>
+
+    <div id="loginSection" style="display: none;">
+        <p>Already have an account? Sign in to your account here</p>
+        <button type="button">Sign-in here</button>
+        <form id="loginForm">
+            <label for="name">Enter nickname or email:</label><br>
+            <input type="text" id="login_name" name="name"><br>
+            <label for="password">Enter Password:</label><br>
+            <input type="password" id="login_password" name="password"><br>
+            <button type="submit">Login</button>
+            <button type="button" id="backFromLogin">Back</button>
+        </form>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const showRegisterBtn = document.getElementById("showRegisterBtn");
+            const showLoginBtn = document.getElementById("showLoginBtn");
+            const registerSection = document.getElementById("registerSection");
+            const loginSection = document.getElementById("loginSection");
+            const entryOptions = document.getElementById("entryOptions");
+            const logOutBtn = document.getElementById("logoutbtn");
+
+            const backFromRegister = document.getElementById("backFromRegister");
+            const backFromLogin = document.getElementById("backFromLogin");
+
+            showRegisterBtn.addEventListener("click", () => {
+                entryOptions.style.display = "none";
+                registerSection.style.display = "block";
+                logOutBtn.style.display = "none";
+            });
+
+            showLoginBtn.addEventListener("click", () => {
+                entryOptions.style.display = "none";
+                loginSection.style.display = "block";
+                logOutBtn.style.display = "none";
+            });
+
+            backFromRegister.addEventListener("click", () => {
+                registerSection.style.display = "none";
+                entryOptions.style.display = "block";
+                logOutBtn.style.display = "block";
+            });
+
+            backFromLogin.addEventListener("click", () => {
+                loginSection.style.display = "none";
+                entryOptions.style.display = "block";
+                logOutBtn.style.display = "block";
+            });
+
+            logOutBtn.addEventListener("click", () => {
+                entryOptions.style.display = "block";
+                registerSection.style.display = "none";
+                loginSection.style.display = "none";
+                logOutBtn.style.display = "none";
+
+            });
+
+        });
+    </script>
+    <link rel="stylesheet" href="style/main.css">
+
+</body>
+
+</html>
