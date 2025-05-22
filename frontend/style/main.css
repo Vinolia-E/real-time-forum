@@ -73,5 +73,16 @@ main input[type='text'] {
     block-size: 30px;
     width: 30%;
 }
+
+main input[type='password'] {
+    background-color: white;
+    border-radius: 5px;
+    border: 1.5px solid rgb(179, 238, 223);
+    color: rgb(70, 64, 64);
+    text-decoration: none;
+    border-color: rgb(179, 238, 223);
+    block-size: 30px;
+    width: 30%; 
+}
  
 
