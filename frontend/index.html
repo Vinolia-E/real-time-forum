@@ -15,16 +15,16 @@
     <p>Welcome to Real_time__forum! Where you connect, interact, post and have fun with others</p>
 
     <header>
-        <!-- <div class="btn"></div> -->
         <div id="entryOptions" name="entryOptions">
+        <!-- <div class="btn"></div> -->
             <button id="showLoginBtn" type="button">Sign-In</button>
             <button id="showRegisterBtn" type="button">Sign-Up</button>
             <button id="logoutbtn" type="button">Log out</button>
         </div>
     </header>
 
+    <main>
     <div id="registerSection" style="display: none;">
-        <!-- <button type="button">Sign-Up</button> -->
         <form id="registerForm">
             <label for="nickname">Nickname:</label><br>
             <input type="text" id="nickname" name="nickname"><br>
@@ -50,8 +50,8 @@
     </div>
 
     <div id="loginSection" style="display: none;">
-        <p>Already have an account? Sign in to your account here</p>
-        <button type="button">Sign-in here</button>
+        <p>Already have an account? Sign in to your account here:</p>
+        
         <form id="loginForm">
             <label for="name">Enter nickname or email:</label><br>
             <input type="text" id="login_name" name="name"><br>
@@ -61,6 +61,8 @@
             <button type="button" id="backFromLogin">Back</button>
         </form>
     </div>
+
+</main>
 
 
     <script>
@@ -78,32 +80,32 @@
             showRegisterBtn.addEventListener("click", () => {
                 entryOptions.style.display = "none";
                 registerSection.style.display = "block";
-                logOutBtn.style.display = "none";
+                // logOutBtn.style.display = "none";
             });
 
             showLoginBtn.addEventListener("click", () => {
                 entryOptions.style.display = "none";
                 loginSection.style.display = "block";
-                logOutBtn.style.display = "none";
+                // logOutBtn.style.display = "none";
             });
 
             backFromRegister.addEventListener("click", () => {
                 registerSection.style.display = "none";
                 entryOptions.style.display = "block";
-                logOutBtn.style.display = "block";
+                // logOutBtn.style.display = "block";
             });
 
             backFromLogin.addEventListener("click", () => {
                 loginSection.style.display = "none";
                 entryOptions.style.display = "block";
-                logOutBtn.style.display = "block";
+                // logOutBtn.style.display = "block";
             });
 
             logOutBtn.addEventListener("click", () => {
                 entryOptions.style.display = "block";
                 registerSection.style.display = "none";
                 loginSection.style.display = "none";
-                logOutBtn.style.display = "none";
+                // logOutBtn.style.display = "none";
 
             });
 
