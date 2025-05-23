@@ -16,7 +16,7 @@
 
     <header>
         <div id="entryOptions" name="entryOptions">
-        <!-- <div class="btn"></div> -->
+            <!-- <div class="btn"></div> -->
             <button id="showLoginBtn" type="button">Sign-In</button>
             <button id="showRegisterBtn" type="button">Sign-Up</button>
             <button id="logoutbtn" type="button">Log out</button>
@@ -24,45 +24,60 @@
     </header>
 
     <main>
-    <div id="registerSection" style="display: none;">
-        <form id="registerForm">
-            <label for="nickname">Nickname:</label><br>
-            <input type="text" id="nickname" name="nickname"><br>
-            <label for="age">Age:</label><br>
-            <input type="text" id="age" name="age"><br>
-            <label for="gender">Gender:</label><br>
-            <input type="radio" id="gender" name="gender"> Female<br>
-            <input type="radio" id="gender" name="gender"> Male<br>
-            <label for="fname">First name:</label><br>
-            <input type="text" id="fname" name="fname"><br>
-            <label for="lname">Last name:</label><br>
-            <input type="text" id="lname" name="lname"><br>
-            <label for="email">Email:</label><br>
-            <input type="text" id="email" name="email"><br>
-            <label for="password">Password:</label><br>
-            <input type="password" id="reg_password" name="password"><br>
-            <label for="cpassword">Confirm Password:</label><br>
-            <input type="password" id="reg_password" name="cpassword"><br>
-            <button type="submit">Register</button>
-            <button type="button" id="backFromRegister">Back</button>
-        </form>
-        <!-- <p>By clicking submit, you agree to our <a href="#">terms and conditions</a></p> -->
-    </div>
+        <div id="registerSection" style="display: none;">
+            <form id="registerForm">
+                <label for="nickname">Nickname:</label><br>
+                <input type="text" id="nickname" name="nickname"><br>
+                <label for="age">Age:</label><br>
+                <input type="text" id="age" name="age"><br>
+                <label for="gender">Gender:</label><br>
+                <input type="radio" id="gender" name="gender"> Female<br>
+                <input type="radio" id="gender" name="gender"> Male<br>
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname"><br>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname"><br>
+                <label for="email">Email:</label><br>
+                <input type="text" id="email" name="email"><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="reg_password" name="password"><br>
+                <label for="cpassword">Confirm Password:</label><br>
+                <input type="password" id="reg_password" name="cpassword"><br>
+                <button type="submit">Register</button>
+                <button type="button" id="backFromRegister">Back</button>
+            </form>
+            <!-- <p>By clicking submit, you agree to our <a href="#">terms and conditions</a></p> -->
+        </div>
 
-    <div id="loginSection" style="display: none;">
-        <p>Already have an account? Sign in to your account here:</p>
-        
-        <form id="loginForm">
-            <label for="name">Enter nickname or email:</label><br>
-            <input type="text" id="login_name" name="name"><br>
-            <label for="password">Enter Password:</label><br>
-            <input type="password" id="login_password" name="password"><br>
-            <button type="submit">Login</button>
-            <button type="button" id="backFromLogin">Back</button>
-        </form>
-    </div>
+        <div id="loginSection" style="display: none;">
+            <p>Already have an account? Sign in to your account here:</p>
 
-</main>
+            <form id="loginForm">
+                <label for="name">Enter nickname or email:</label><br>
+                <input type="text" id="login_name" name="name"><br>
+                <label for="password">Enter Password:</label><br>
+                <input type="password" id="login_password" name="password"><br>
+                <button type="submit">Login</button>
+                <button type="button" id="backFromLogin">Back</button>
+            </form>
+        </div>
+
+            <button id="addPostButton" type="menu">Add a post</button>
+
+            <textarea name="postArea" id="textPost" placeholder="Write your post here"></textarea>
+            <div>
+                <button id="addImageButton" type="menu">Add image/video</button>
+            </div>
+
+            <div id="postComment" name="postComment">
+                <button id="addCommentButton" type="menu">Add a comment</button>
+                <textarea name="commentArea" id="textComment" placeholder="Write your comment here"></textarea>
+            </div>
+
+        </div>
+
+
+    </main>
 
 
     <script>
