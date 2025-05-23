@@ -67,8 +67,8 @@
         <h2>Posts</h2>
         <div id="postCategories">
             <button>Categories</button>
-            <div id="categorySection" name="categorySection">
-                <!-- <div id="categorySection" name="categorySection" style="display: none;"> -->
+            <!-- <div id="categorySection" name="categorySection"> -->
+                <div id="categorySection" name="categorySection" style="display: none;">
                 <h2>Select one or more categories</h2>
                 <input type="checkbox" id="categoryall" name="categoryall">All <br>
                 <input type="checkbox" id="category1" name="category1">Trending <br>
@@ -82,15 +82,16 @@
 
         <button id="addPostButton" type="menu">Add a post</button>
 
-        <div id="postSection" name="postSection">
-            <!-- <div id="postSection" name="postSection" style="display: none;"> -->
+        <!-- <div id="postSection" name="postSection"> -->
+            <div id="postSection" name="postSection" style="display: none;">
             <textarea name="postArea" id="textPost" placeholder="Write your post here"></textarea>
             <div>
                 <button id="addImageButton" type="menu">Add image/video</button>
             </div>
 
             <div id="postComment" name="postComment">
-                <button id="addCommentButton" type="menu">Add a comment</button>
+                <!-- <div id="postComment" name="postComment" style="display: none;"> -->
+                <button id="addCommentButton" type="menu">💬</button>
                 <textarea name="commentArea" id="textComment" placeholder="Write your comment here"></textarea>
             </div>
         </div>
