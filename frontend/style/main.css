@@ -27,7 +27,7 @@ header {
 }
 header button {
     background-color: rgb(21, 184, 129);
-    margin-left: 7%;
+    margin-left: 10%;
     text-align: center;
     color: white;
     border-radius: 5px;
@@ -83,6 +83,20 @@ main input[type='password'] {
     border-color: rgb(179, 238, 223);
     block-size: 30px;
     width: 30%; 
+}
+
+main header {
+    background-color: rgb(169, 240, 222);
+    padding: 10px;
+    text-align: left;
+    border-radius: 10px;
+}
+
+main header a {
+    text-decoration: underline;
+    color: royalblue;
+    font-size: 25px;
+    margin-left: 12%;
 }
  
 
