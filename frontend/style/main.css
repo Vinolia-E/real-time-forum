@@ -38,6 +38,11 @@ header button {
     background-origin: padding-box;
 }
 
+header button:hover {
+    background-color: rgb(179, 238, 223);
+    color: rgb(21, 184, 129);
+}
+
 main {
     padding: 10px;
     border-radius: 10px;
@@ -94,9 +99,18 @@ main header {
 
 main header a {
     text-decoration: underline;
-    color: royalblue;
+    color: rgb(225, 150, 65);
     font-size: 25px;
-    margin-left: 12%;
+    margin-left: 5%;
 }
+
+main header a[href="#private Message"] {
+    color: rgb(2, 116, 2);
+}
+main header a:hover {
+    color: rgb(70, 64, 64);
+    text-decoration: none;
+}
+
  
 
