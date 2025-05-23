@@ -112,5 +112,10 @@ main header a:hover {
     text-decoration: none;
 }
 
+main header a[href="online"] {
+    color: rgb(62, 78, 219);
+    font-size: 18px;
+}
+
  
 
