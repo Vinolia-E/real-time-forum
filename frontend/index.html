@@ -62,8 +62,28 @@
             </form>
         </div>
 
-            <button id="addPostButton" type="menu">Add a post</button>
+        <div id="posts" name="posts">
+        <!-- <div id="posts" name="posts" style="display:none"> -->
+        <h2>Posts</h2>
+        <div id="postCategories">
+            <button>Categories</button>
+            <div id="categorySection" name="categorySection">
+                <!-- <div id="categorySection" name="categorySection" style="display: none;"> -->
+                <h2>Select one or more categories</h2>
+                <input type="checkbox" id="categoryall" name="categoryall">All <br>
+                <input type="checkbox" id="category1" name="category1">Trending <br>
+                <input type="checkbox" id="category2" name="category2"> Fashion <br>
+                <input type="checkbox" id="category3" name="category3"> Technology <br>
+                <input type="checkbox" id="category4" name="category4"> Education <br>
+                <input type="checkbox" id="category5" name="category5"> Health <br>
+                <input type="checkbox" id="category6" name="category6"> Sports <br>
+            </div>
+        </div>
 
+        <button id="addPostButton" type="menu">Add a post</button>
+
+        <div id="postSection" name="postSection">
+            <!-- <div id="postSection" name="postSection" style="display: none;"> -->
             <textarea name="postArea" id="textPost" placeholder="Write your post here"></textarea>
             <div>
                 <button id="addImageButton" type="menu">Add image/video</button>
@@ -73,6 +93,7 @@
                 <button id="addCommentButton" type="menu">Add a comment</button>
                 <textarea name="commentArea" id="textComment" placeholder="Write your comment here"></textarea>
             </div>
+        </div>
 
         </div>
 
