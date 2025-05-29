@@ -26,7 +26,7 @@
 
     <main>
 
-        <div id="mainHeader" name="mainHeader">
+        <div id="mainHeader" name="mainHeader" style="display: none;">
                 <header>
                     <a href="#home">Home</a>
                     <a href="#about">About</a>
@@ -41,22 +41,22 @@
         <div id="registerSection" style="display: none;">
             <form id="registerForm">
                 <label for="nickname">Nickname:</label><br>
-                <input type="text" id="nickname" name="nickname"><br>
+                <input type="text" id="nickname" name="nickname" required><br>
                 <label for="age">Age:</label><br>
-                <input type="text" id="age" name="age"><br>
+                <input type="text" id="age" name="age" required><br>
                 <label for="gender">Gender:</label><br>
                 <input type="radio" id="gender" name="gender"> Female<br>
                 <input type="radio" id="gender" name="gender"> Male<br>
                 <label for="fname">First name:</label><br>
-                <input type="text" id="fname" name="fname"><br>
+                <input type="text" id="fname" name="fname" required><br>
                 <label for="lname">Last name:</label><br>
-                <input type="text" id="lname" name="lname"><br>
+                <input type="text" id="lname" name="lname" required><br>
                 <label for="email">Email:</label><br>
-                <input type="text" id="email" name="email"><br>
+                <input type="text" id="email" name="email" required><br>
                 <label for="password">Password:</label><br>
-                <input type="password" id="reg_password" name="password"><br>
+                <input type="password" id="reg_password" name="password" required><br>
                 <label for="cpassword">Confirm Password:</label><br>
-                <input type="password" id="reg_password" name="cpassword"><br>
+                <input type="password" id="reg_password" name="cpassword" required><br>
                 <button type="submit">Register</button>
                 <button type="button" id="backFromRegister">Back</button>
             </form>
@@ -68,16 +68,16 @@
 
             <form id="loginForm">
                 <label for="name">Enter nickname or email:</label><br>
-                <input type="text" id="login_name" name="name"><br>
+                <input type="text" id="login_name" name="name" required><br>
                 <label for="password">Enter Password:</label><br>
-                <input type="password" id="login_password" name="password"><br>
+                <input type="password" id="login_password" name="password" required><br>
                 <button type="submit">Login</button>
                 <button type="button" id="backFromLogin">Back</button>
             </form>
         </div>
 
 
-        <div id="posts" name="posts">
+        <div id="posts" name="posts" style="display: none;">
             <!-- <div id="posts" name="posts" style="display:none"> -->
             <h2>Posts</h2>
             <div id="postCategories">
