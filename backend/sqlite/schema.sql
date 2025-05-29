@@ -1,5 +1,5 @@
     CREATE TABLE IF NOT EXISTS "users" (
-        "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+        "user_id" INTEGER PRIMARY KEY AUTOINCREMENT,
         "nick_name" TEXT NOT NULL UNIQUE,
         "age" INTEGER NOT NULL CHECK (age >= 18),
         "gender" TEXT NOT NULL,
@@ -11,7 +11,7 @@
     );
 
     CREATE TABLE IF NOT EXISTS "posts" (
-        "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+        "post_id" INTEGER PRIMARY KEY AUTOINCREMENT,
         "user_id" INTEGER NOT NULL,
         "title" TEXT NOT NULL,
         "content" TEXT NOT NULL,
@@ -20,7 +20,7 @@
     );
     
     CREATE TABLE IF NOT EXISTS "comments" (
-        "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+        "comments_id" INTEGER PRIMARY KEY AUTOINCREMENT,
         "post_id" INTEGER NOT NULL,
         "user_id" INTEGER NOT NULL,
         "content" TEXT NOT NULL,
@@ -30,7 +30,7 @@
     );
 
     CREATE TABLE IF NOT EXISTS "likes" (
-        "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+        "likes_id" INTEGER PRIMARY KEY AUTOINCREMENT,
         "post_id" INTEGER NOT NULL,
         "user_id" INTEGER NOT NULL,
         "created_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -39,14 +39,14 @@
     );
 
     CREATE TABLE IF NOT EXISTS "dislikes" (
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "dislikes_id" INTEGER PRIMARY KEY AUTOINCREMENT,
     FOREIGN KEY ("post_id") REFERENCES "posts" ("id") ON DELETE CASCADE,
     FOREIGN KEY ("comment_id") REFERENCES "comments" ("id") ON DELETE CASCADE,
     FOREIGN KEY ("user_id") REFERENCES "users" ("id") ON DELETE CASCADE
     );
 
     CREATE TABLE IF NOT EXISTS "messages" (
-        "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+        "messages_id" INTEGER PRIMARY KEY AUTOINCREMENT,
         "sender_id" INTEGER NOT NULL,
         "receiver_id" INTEGER NOT NULL,
         "content" TEXT NOT NULL,
