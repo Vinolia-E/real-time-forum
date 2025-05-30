@@ -16,7 +16,7 @@
         "title" TEXT NOT NULL,
         "content" TEXT NOT NULL,
         "created_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY ("user_id") REFERENCES "users" ("id") ON DELETE CASCADE
+        FOREIGN KEY ("user_id") REFERENCES "users" ("user_id") ON DELETE CASCADE
     );
     
     CREATE TABLE IF NOT EXISTS "comments" (
@@ -25,8 +25,8 @@
         "user_id" INTEGER NOT NULL,
         "content" TEXT NOT NULL,
         "created_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY ("post_id") REFERENCES "posts" ("id") ON DELETE CASCADE,
-        FOREIGN KEY ("user_id") REFERENCES "users" ("id") ON DELETE CASCADE
+        FOREIGN KEY ("post_id") REFERENCES "posts" ("post_id") ON DELETE CASCADE,
+        FOREIGN KEY ("user_id") REFERENCES "users" ("user_id") ON DELETE CASCADE
     );
 
     CREATE TABLE IF NOT EXISTS "likes" (
@@ -34,15 +34,17 @@
         "post_id" INTEGER NOT NULL,
         "user_id" INTEGER NOT NULL,
         "created_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY ("post_id") REFERENCES "posts" ("id") ON DELETE CASCADE,
-        FOREIGN KEY ("user_id") REFERENCES "users" ("id") ON DELETE CASCADE
+        FOREIGN KEY ("post_id") REFERENCES "posts" ("post_id") ON DELETE CASCADE,
+        FOREIGN KEY ("user_id") REFERENCES "users" ("user_id") ON DELETE CASCADE
     );
 
     CREATE TABLE IF NOT EXISTS "dislikes" (
     "dislikes_id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    FOREIGN KEY ("post_id") REFERENCES "posts" ("id") ON DELETE CASCADE,
-    FOREIGN KEY ("comment_id") REFERENCES "comments" ("id") ON DELETE CASCADE,
-    FOREIGN KEY ("user_id") REFERENCES "users" ("id") ON DELETE CASCADE
+    "post_id" INTEGER NOT NULL,
+    "user_id" INTEGER NOT NULL,
+    FOREIGN KEY ("post_id") REFERENCES "posts" ("post_id") ON DELETE CASCADE,
+    -- FOREIGN KEY ("comment_id") REFERENCES "comments" ("comment_id") ON DELETE CASCADE,
+    FOREIGN KEY ("user_id") REFERENCES "users" ("user_id") ON DELETE CASCADE
     );
 
     CREATE TABLE IF NOT EXISTS "messages" (
@@ -51,6 +53,6 @@
         "receiver_id" INTEGER NOT NULL,
         "content" TEXT NOT NULL,
         "created_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY ("sender_id") REFERENCES "users" ("id") ON DELETE CASCADE,
-        FOREIGN KEY ("receiver_id") REFERENCES "users" ("id") ON DELETE CASCADE
+        FOREIGN KEY ("sender_id") REFERENCES "users" ("user_id") ON DELETE CASCADE,
+        FOREIGN KEY ("receiver_id") REFERENCES "users" ("receiver_id") ON DELETE CASCADE
     );
