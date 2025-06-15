@@ -30,6 +30,11 @@ func RegisterHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if err := r.ParseForm(); err != nil {
+		http.Error(w, "Invalid form data", http.StatusBadRequest)
+		return
+	}
+
 	nickname := r.FormValue("nickname")
 	age := r.FormValue("age")
 	gender := r.FormValue("gender")
@@ -77,6 +82,11 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if err := r.ParseForm(); err != nil {
+		http.Error(w, "Invalid form data", http.StatusBadRequest)
+		return
+	}
+
 	name := r.FormValue("name")
 	password := r.FormValue("password")
 
@@ -93,10 +103,6 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Invalid credentials", http.StatusUnauthorized)
 		return
 	}
-
-	// log.Println("Login attempt:", name)
-	// log.Println("Login attempt:", password)
-
 	// TODO: Validate against DB
 	w.Write([]byte("Login successful!"))
 }
