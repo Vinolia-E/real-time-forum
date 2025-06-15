@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>real time forum</title>
+    <link rel="stylesheet" href="style/main.css"> 
 </head>
 
 <body>
@@ -26,7 +27,8 @@
 
     <main>
 
-        <div id="mainHeader" name="mainHeader" style="display: none;">
+        <!-- <div id="mainHeader" name="mainHeader"> -->
+            <div id="mainHeader" name="mainHeader" style="display: none;">
                 <header>
                     <a href="#home">Home</a>
                     <a href="#about">About</a>
@@ -39,14 +41,14 @@
 
 
         <div id="registerSection" style="display: none;">
-            <form id="registerForm">
+            <form id="registerForm" >
                 <label for="nickname">Nickname:</label><br>
                 <input type="text" id="nickname" name="nickname" required><br>
                 <label for="age">Age:</label><br>
                 <input type="text" id="age" name="age" required><br>
                 <label for="gender">Gender:</label><br>
-                <input type="radio" id="gender" name="gender"> Female<br>
-                <input type="radio" id="gender" name="gender"> Male<br>
+                <input type="radio" id="gender_female" name="gender"> Female<br>
+                <input type="radio" id="gender_male" name="gender"> Male<br>
                 <label for="fname">First name:</label><br>
                 <input type="text" id="fname" name="fname" required><br>
                 <label for="lname">Last name:</label><br>
@@ -56,7 +58,7 @@
                 <label for="password">Password:</label><br>
                 <input type="password" id="reg_password" name="password" required><br>
                 <label for="cpassword">Confirm Password:</label><br>
-                <input type="password" id="reg_password" name="cpassword" required><br>
+                <input type="password" id="reg_cpassword" name="cpassword" required><br>
                 <button type="submit">Register</button>
                 <button type="button" id="backFromRegister">Back</button>
             </form>
@@ -66,7 +68,7 @@
         <div id="loginSection" style="display: none;">
             <p>Already have an account? Sign in to your account here:</p>
 
-            <form id="loginForm">
+            <form id="loginForm" action="/login" method="POST">
                 <label for="name">Enter nickname or email:</label><br>
                 <input type="text" id="login_name" name="name" required><br>
                 <label for="password">Enter Password:</label><br>
@@ -77,8 +79,8 @@
         </div>
 
 
-        <div id="posts" name="posts" style="display: none;">
-            <!-- <div id="posts" name="posts" style="display:none"> -->
+        <!-- <div id="posts" name="posts"> -->
+            <div id="posts" name="posts" style="display:none">
             <h2>Posts</h2>
             <div id="postCategories">
                 <button>Categories</button>
@@ -97,8 +99,8 @@
 
             <button id="addPostButton" type="menu">Add a post</button>
 
-            <!-- <div id="postSection" name="postSection"> -->
-            <div id="postSection" name="postSection" style="display: none;">
+            <div id="postSection" name="postSection">
+            <!-- <div id="postSection" name="postSection" style="display: none;"> -->
                 <textarea name="postArea" id="textPost" placeholder="Write your post here"></textarea>
                 <div>
                     <button id="addImageButton" type="menu">Add image/video</button>
@@ -125,46 +127,76 @@
             const loginSection = document.getElementById("loginSection");
             const entryOptions = document.getElementById("entryOptions");
             const logOutBtn = document.getElementById("logoutbtn");
-
+            const registerForm = document.getElementById("registerForm");
+            const loginForm = document.getElementById("loginForm");
+    
             const backFromRegister = document.getElementById("backFromRegister");
             const backFromLogin = document.getElementById("backFromLogin");
-
+    
             showRegisterBtn.addEventListener("click", () => {
                 entryOptions.style.display = "none";
                 registerSection.style.display = "block";
-                // logOutBtn.style.display = "none";
             });
-
+    
             showLoginBtn.addEventListener("click", () => {
                 entryOptions.style.display = "none";
                 loginSection.style.display = "block";
-                // logOutBtn.style.display = "none";
             });
-
+    
             backFromRegister.addEventListener("click", () => {
                 registerSection.style.display = "none";
                 entryOptions.style.display = "block";
-                // logOutBtn.style.display = "block";
             });
-
+    
             backFromLogin.addEventListener("click", () => {
                 loginSection.style.display = "none";
                 entryOptions.style.display = "block";
-                // logOutBtn.style.display = "block";
             });
-
+    
             logOutBtn.addEventListener("click", () => {
                 entryOptions.style.display = "block";
                 registerSection.style.display = "none";
                 loginSection.style.display = "none";
-                // logOutBtn.style.display = "none";
-
             });
-
+    
+            // // ✅ REGISTER SUBMIT HANDLER
+            // registerForm.addEventListener("submit", function (e) {
+            //     e.preventDefault();
+            //     fetch("/register", {
+            //         method: "POST",
+            //         body: new FormData(registerForm),
+            //     })
+            //         .then(res => res.json())
+            //         .then(data => {
+            //             if (data.status === "ok") {
+            //                 document.getElementById("mainHeader").style.display = "block";
+            //                 registerSection.style.display = "none";
+            //             } else {
+            //                 alert("Registration failed: " + data.message);
+            //             }
+            //         })
+            //         .catch(err => alert("Error registering: " + err));
+            // });
+    
+            // ✅ LOGIN SUBMIT HANDLER
+            // loginForm.addEventListener("submit", function (e) {
+            //     e.preventDefault();
+            //     fetch("/login", {
+            //         method: "POST",
+            //         body: new FormData(loginForm),
+            //     })
+            //         .then(res => res.text())
+            //         .then(data => {
+            //             alert(data);
+            //             loginSection.style.display = "none";
+            //             document.getElementById("mainHeader").style.display = "block";
+            //         })
+            //         .catch(err => alert("Login error: " + err));
+            // });
         });
-    </script>
-    <link rel="stylesheet" href="style/main.css">
+    </script>  
 
 </body>
+<link rel="stylesheet" href="style/main.css"> 
 
-</html>
+</html> 
